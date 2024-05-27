@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ClientStruct.channel = ManagedChannelBuilder.forAddress("frp-art.top", 44711)
+        // 一个是测试的，一个是稳定的
+        ClientStruct.channel = ManagedChannelBuilder.forAddress("frp-key.top", 41231)
+//        ClientStruct.channel = ManagedChannelBuilder.forAddress("frp-art.top", 44711)
                 .usePlaintext()
                 .build();
 

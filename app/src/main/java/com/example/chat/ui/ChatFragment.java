@@ -98,14 +98,7 @@ public class ChatFragment extends Fragment {
         @Override
         protected ServerResponse doInBackground(Void... nothing) {
             ChatGrpc.ChatBlockingStub stub = ChatGrpc.newBlockingStub(ClientStruct.channel);
-            GetRoomsRequest req = GetRoomsRequest.newBuilder().setClient(
-                    Client.newBuilder()
-                            .setDevice(Device.newBuilder().setSerialNumber(""))
-                            .setUser(proto.chat.User.newBuilder()
-                                    .setName("d")
-                                    .setGenderValue(1))
-            ).build();
-
+            GetRoomsRequest req = GetRoomsRequest.newBuilder().setClient(ClientStruct.client).build();
             return stub.getrooms(req);
         }
 

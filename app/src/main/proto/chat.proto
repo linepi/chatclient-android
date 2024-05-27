@@ -59,7 +59,7 @@ service Chat {
     rpc join (JoinRequest) returns (ServerResponse) {}     
     rpc exitroom (ExitRoomRequest) returns (ServerResponse) {}
     // 发送信息
-    rpc send (SendRequest) returns (ServerResponse) {} 
+    rpc send (SendRequest) returns (ServerResponse) {}
     rpc signup(UserSignupRequest) returns (ServerResponse) {}
 }
 
