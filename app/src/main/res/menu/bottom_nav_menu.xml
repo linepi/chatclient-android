@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_chat"
+        android:title="通信" />
+    <item
+        android:id="@+id/navigation_friends"
+        android:title="朋友" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:title="我" />
+</menu>
