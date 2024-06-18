@@ -85,6 +85,15 @@ public class ChatFragment extends Fragment {
 
         mainHandler = new Handler(Looper.getMainLooper());
 
+        if (getActivity() instanceof AppCompatActivity) {
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            ActionBar actionBar = activity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle("畅聊");
+            }
+            setHasOptionsMenu(true);
+        }
+
         new GetRoomTask().execute();
         setupSearchView();
 

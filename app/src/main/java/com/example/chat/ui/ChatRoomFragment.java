@@ -107,6 +107,7 @@ public class ChatRoomFragment extends Fragment {
 
         @Override
         protected void onPostExecute(ServerResponse response) {
+            editTextMessage.setText("");
         }
     }
 
@@ -161,6 +162,16 @@ public class ChatRoomFragment extends Fragment {
             new UpdateTask().execute();
         }
 
+        if (getActivity() instanceof AppCompatActivity) {
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            ActionBar actionBar = activity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setDisplayHomeAsUpEnabled(true);
+                actionBar.setTitle(roomname);
+            }
+            setHasOptionsMenu(true);
+        }
+
         handler.postDelayed(runnable, 100);
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,7 +203,6 @@ public class ChatRoomFragment extends Fragment {
         messageList.addAll(outlist);
         messageAdapter.notifyItemInserted(messageList.size() - 1);
         recyclerView.scrollToPosition(messageList.size() - 1);
-        editTextMessage.setText("");
     }
 
     @Override
