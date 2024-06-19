@@ -125,6 +125,30 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+//        loginButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String username = usernameEditText.getText().toString();
+//                String password = passwordEditText.getText().toString();
+//
+//                // Here you can add your own validation logic
+//                if (username.equals("admin") && password.equals("1234")) {
+//                    // Save login state
+//                    SharedPreferences sharedPref = getSharedPreferences("MyApp", MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPref.edit();
+//                    editor.putBoolean("isLoggedIn", true);
+//                    editor.apply();
+//
+//                    // Return result to MainActivity
+//                    Intent resultIntent = new Intent();
+//                    setResult(RESULT_OK, resultIntent);
+//                    finish(); // Close LoginActivity
+//                } else {
+//                    Toast.makeText(LoginActivity.this, "Invalid login", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -91,12 +91,12 @@ public class ChatRoomFragment extends Fragment {
 
         @Override
         protected ServerResponse doInBackground(Void... nothing) {
-                ChatGrpc.ChatBlockingStub stub = ChatGrpc.newBlockingStub(ClientStruct.channel);
-                SendRequest req = SendRequest.newBuilder()
-                        .setMessage(
-                                proto.chat.Message.newBuilder()
-                                        .setMsgTypeValue(MessageType.Text_VALUE)
-                                        .setTime(System.currentTimeMillis())
+            ChatGrpc.ChatBlockingStub stub = ChatGrpc.newBlockingStub(ClientStruct.channel);
+            SendRequest req = SendRequest.newBuilder()
+                    .setMessage(
+                            proto.chat.Message.newBuilder()
+                                    .setMsgTypeValue(MessageType.Text_VALUE)
+                                    .setTime(System.currentTimeMillis())
                                     .setBytes(ByteString.copyFrom(content.getBytes()))
                                     .setClient(ClientStruct.client)
                     )
@@ -181,7 +181,7 @@ public class ChatRoomFragment extends Fragment {
                     new SendTask(messageText).execute();
                 }
             }
-    });
+        });
 
         return rootView;
     }
@@ -198,7 +198,7 @@ public class ChatRoomFragment extends Fragment {
                     new String(msg.getBytes().toByteArray(), java.nio.charset.StandardCharsets.UTF_8),
                     msg.getClient().getUser().getName().equals(ClientStruct.username),
                     new Date(msg.getTime())
-                    ));
+            ));
         }
         messageList.addAll(outlist);
         messageAdapter.notifyItemInserted(messageList.size() - 1);
